@@ -1,13 +1,13 @@
 namespace SilpoBonusCore
 {
 
-    public class FacrorByCategory : Offer
+    public class FacrorByCategoryOffer : Offer
     {
 
         private Category category;
         private int factor;
 
-        public FacrorByCategory(Category category, int factor)
+        public FacrorByCategoryOffer(Category category, int factor)
         {
             this.category = category;
             this.factor = factor;

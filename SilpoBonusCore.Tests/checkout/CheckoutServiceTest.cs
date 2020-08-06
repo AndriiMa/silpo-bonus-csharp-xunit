@@ -109,17 +109,17 @@ namespace SilpoBonusCore.Tests
 
        
 
-        // [Fact]
-        // void useOffer__factorByCategory() {
-        //     checkoutService.AddProduct(milk);
-        //     checkoutService.AddProduct(milk);
-        //     checkoutService.AddProduct(bread);
+        [Fact]
+        void useOffer__factorByCategory() {
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(bread);
 
-        //     checkoutService.UseOffer(new FactorByCategoryOffer(Category.MILK, 2));
-        //     Check check = checkoutService.CloseCheck();
+            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2));
+            Check check = checkoutService.CloseCheck();
 
-        //     Assert.Equal(check.GetTotalPoints(), 31);
-        // }
+            Assert.Equal(check.GetTotalPoints(), 31);
+        }
 
 
     }
