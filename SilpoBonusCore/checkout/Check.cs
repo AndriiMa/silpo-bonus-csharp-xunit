@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,6 +32,11 @@ namespace SilpoBonusCore
         public int GetCostByCategory(Category category){
             return products.Where(p => p.GetCategory().Equals(category))
             .Sum(p=> p.GetPrice());           
+        }
+
+        public int GetTotalPoints()
+        {
+            return GetTotalCost();
         }
     }
 
