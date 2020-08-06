@@ -27,7 +27,7 @@ namespace SilpoBonusCore
             return closedCheck;
         }
 
-        public void useOffer(Offer offer)
+        public void UseOffer(Offer offer)
         {
            offer.Apply(this.check);
         }

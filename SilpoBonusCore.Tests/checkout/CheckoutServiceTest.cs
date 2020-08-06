@@ -88,7 +88,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.useOffer(new AnyGoodsOffer(6, 2));
+            checkoutService.UseOffer(new AnyGoodsOffer(6, 2));
 
             Check check = checkoutService.CloseCheck();
 
@@ -100,12 +100,26 @@ namespace SilpoBonusCore.Tests
         {
             checkoutService.AddProduct(bread);
 
-            checkoutService.useOffer(new AnyGoodsOffer(6, 2));
+            checkoutService.UseOffer(new AnyGoodsOffer(6, 2));
 
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(check.GetTotalPoints(), 3);
         }
+
+       
+
+        // [Fact]
+        // void useOffer__factorByCategory() {
+        //     checkoutService.AddProduct(milk);
+        //     checkoutService.AddProduct(milk);
+        //     checkoutService.AddProduct(bread);
+
+        //     checkoutService.UseOffer(new FactorByCategoryOffer(Category.MILK, 2));
+        //     Check check = checkoutService.CloseCheck();
+
+        //     Assert.Equal(check.GetTotalPoints(), 31);
+        // }
 
 
     }
