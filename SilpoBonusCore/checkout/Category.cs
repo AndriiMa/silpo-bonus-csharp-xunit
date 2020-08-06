@@ -1,4 +1,4 @@
-namespace SilpoBonusCore.Checkout{
+namespace SilpoBonusCore{
 
     public enum Category{
 

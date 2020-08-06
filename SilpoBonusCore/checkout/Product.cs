@@ -1,4 +1,4 @@
-namespace SilpoBonusCore.Checkout{
+namespace SilpoBonusCore{
 
     public class Product{
 
@@ -18,7 +18,19 @@ namespace SilpoBonusCore.Checkout{
             this.price = price;
             this.name = name;
         }
-        
+
+        public int GetPrice(){
+            return this.price;
+        }
+
+        public string GetName(){
+            return this.name;
+        }
+
+        public Category GetCategory(){
+            return this.category;
+        }
+
     }
 
 }

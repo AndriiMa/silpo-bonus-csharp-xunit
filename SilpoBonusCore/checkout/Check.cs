@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SilpoBonusCore.Checkout
+namespace SilpoBonusCore
 {
-
     public class Check
     {
         private List<Product> products = new List<Product>();
