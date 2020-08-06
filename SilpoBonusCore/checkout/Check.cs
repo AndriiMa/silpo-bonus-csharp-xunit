@@ -36,7 +36,7 @@ namespace SilpoBonusCore
 
         public int GetTotalPoints()
         {
-            return GetTotalCost();
+            return GetTotalCost() + points;
         }
     }
 

@@ -1,4 +1,5 @@
 using System;
+using SilpoBonusCore.Tests;
 
 namespace SilpoBonusCore
 {
@@ -25,6 +26,13 @@ namespace SilpoBonusCore
             Check closedCheck = this.check;
             this.check = null;
             return closedCheck;
+        }
+
+        public void useOffer(AnyGoodsOffer offer)
+        {
+            if(offer.GetTotalCost() <= this.check.GetTotalCost())
+            this.check.AddPoints(offer.GetPoints());
+
         }
     }
 }
