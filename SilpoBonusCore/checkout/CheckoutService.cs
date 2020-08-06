@@ -1,5 +1,4 @@
 using System;
-using SilpoBonusCore.Tests;
 
 namespace SilpoBonusCore
 {

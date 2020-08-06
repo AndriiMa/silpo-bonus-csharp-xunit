@@ -1,6 +1,6 @@
-namespace SilpoBonusCore.Tests
+namespace SilpoBonusCore
 {
-    public class AnyGoodsOffer
+    public class AnyGoodsOffer : Offer
     {
         private int totalCost;
         private int points;
@@ -19,5 +19,7 @@ namespace SilpoBonusCore.Tests
         public int GetPoints(){
             return this.points;
         }
+
+
     }
 }
