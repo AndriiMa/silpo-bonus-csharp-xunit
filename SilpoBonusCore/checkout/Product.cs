@@ -1,6 +1,8 @@
-namespace SilpoBonusCore{
+namespace SilpoBonusCore
+{
 
-    public class Product{
+    public class Product
+    {
 
         private int price;
         private string name;
@@ -13,21 +15,20 @@ namespace SilpoBonusCore{
             this.category = category;
         }
 
-        public Product(int price, string name)
-        {
-            this.price = price;
-            this.name = name;
-        }
+        public Product(int price, string name) : this(price, name, Category.NONE) { }
 
-        public int GetPrice(){
+        public int GetPrice()
+        {
             return this.price;
         }
 
-        public string GetName(){
+        public string GetName()
+        {
             return this.name;
         }
 
-        public Category GetCategory(){
+        public Category GetCategory()
+        {
             return this.category;
         }
 

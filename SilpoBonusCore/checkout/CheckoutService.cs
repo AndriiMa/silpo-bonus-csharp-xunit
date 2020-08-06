@@ -27,11 +27,9 @@ namespace SilpoBonusCore
             return closedCheck;
         }
 
-        public void useOffer(AnyGoodsOffer offer)
+        public void useOffer(Offer offer)
         {
-            if(offer.GetTotalCost() <= this.check.GetTotalCost())
-            this.check.AddPoints(offer.GetPoints());
-
+           offer.Apply(this.check);
         }
     }
 }

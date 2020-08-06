@@ -9,7 +9,6 @@ namespace SilpoBonusCore
         private List<Product> products = new List<Product>();
 
         private int points = 0;
-
         public int GetTotalCost()
         {
             int totalCost = 0;
@@ -20,12 +19,12 @@ namespace SilpoBonusCore
             return totalCost;
         }
 
-        public void AddProduct(Product product)
+        internal void AddProduct(Product product)
         {
             this.products.Add(product);
         }
 
-        public void AddPoints(int points){
+        internal void AddPoints(int points){
             this.points += points;
         }
 
