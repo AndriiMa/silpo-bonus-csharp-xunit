@@ -88,7 +88,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new AnyGoodsOffer(6, 2));
+            checkoutService.UseOffer(new AnyGoodsOffer(6, 2, new DateTime(2025, 10, 20)));
 
             Check check = checkoutService.CloseCheck();
 
@@ -100,7 +100,7 @@ namespace SilpoBonusCore.Tests
         {
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new AnyGoodsOffer(6, 2));
+            checkoutService.UseOffer(new AnyGoodsOffer(6, 2, new DateTime(2025,10,20)));
 
             Check check = checkoutService.CloseCheck();
 
@@ -115,7 +115,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2));
+            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2025,10,20)));
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(check.GetTotalPoints(), 31);

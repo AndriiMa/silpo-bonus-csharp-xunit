@@ -1,3 +1,5 @@
+using System;
+
 namespace SilpoBonusCore
 {
     public class AnyGoodsOffer : Offer
@@ -5,7 +7,9 @@ namespace SilpoBonusCore
         private int totalCost;
         private int points;
 
-        public AnyGoodsOffer(int totalCost, int points)
+        public AnyGoodsOffer(int totalCost,
+                             int points,
+                             DateTime expirationDate) : base(expirationDate)
         {
             this.totalCost = totalCost;
             this.points = points;
