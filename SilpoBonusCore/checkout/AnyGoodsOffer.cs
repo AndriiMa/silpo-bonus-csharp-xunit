@@ -24,7 +24,7 @@ namespace SilpoBonusCore
             return this.points;
         }
 
-        public override void Apply(Check check)
+        public override void AddPoints(Check check)
         {
            if(GetTotalCost() <= check.GetTotalCost()){
             check.AddPoints(GetPoints());

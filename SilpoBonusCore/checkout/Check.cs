@@ -24,6 +24,7 @@ namespace SilpoBonusCore
             this.products.Add(product);
         }
 
+        
         internal void AddPoints(int points){
             this.points += points;
         }

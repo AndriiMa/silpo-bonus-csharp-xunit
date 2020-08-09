@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SilpoBonusCore
 {
@@ -6,6 +7,7 @@ namespace SilpoBonusCore
     {
         private Check check;
 
+        private List<Offer> offers = new List<Offer>(); 
         public void OpenCheck()
         {
             this.check = new Check();
@@ -21,7 +23,9 @@ namespace SilpoBonusCore
         }
 
         public Check CloseCheck()
-        {
+        {   
+            ApplyOffers();
+
             Check closedCheck = this.check;
             this.check = null;
             return closedCheck;
@@ -29,7 +33,13 @@ namespace SilpoBonusCore
 
         public void UseOffer(Offer offer)
         {
-           offer.Apply(this.check);
+             if(offer.IsExpired()){
+                this.offers.Add(offer);
+            }
+        }
+
+        private void ApplyOffers(){
+            offers.ForEach(o => o.Apply(check));
         }
     }
 }
