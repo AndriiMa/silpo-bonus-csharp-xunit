@@ -6,8 +6,7 @@ namespace SilpoBonusCore
     public class CheckoutService
     {
         private Check check;
-
-        private List<Offer> offers = new List<Offer>(); 
+        private List<Offer> offers = new List<Offer>();
         public void OpenCheck()
         {
             this.check = new Check();
@@ -19,11 +18,11 @@ namespace SilpoBonusCore
             {
                 OpenCheck();
             }
-                this.check.AddProduct(product);
+            this.check.AddProduct(product);
         }
 
         public Check CloseCheck()
-        {   
+        {
             ApplyOffers();
 
             Check closedCheck = this.check;
@@ -33,12 +32,14 @@ namespace SilpoBonusCore
 
         public void UseOffer(Offer offer)
         {
-             if(offer.IsExpired()){
+            if (offer.IsExpired())
+            {
                 this.offers.Add(offer);
             }
         }
 
-        private void ApplyOffers(){
+        private void ApplyOffers()
+        {
             offers.ForEach(o => o.Apply(check));
         }
     }

@@ -9,9 +9,9 @@ namespace SilpoBonusCore
         private Category category;
         private int factor;
 
-        public FacrorByCategoryOffer(Category category, 
+        public FacrorByCategoryOffer(Category category,
                                     int factor,
-                                    DateTime expirationDate):base(expirationDate)
+                                    DateTime expirationDate) : base(expirationDate)
         {
             this.category = category;
             this.factor = factor;

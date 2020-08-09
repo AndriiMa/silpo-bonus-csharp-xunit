@@ -14,8 +14,8 @@ namespace SilpoBonusCore.Tests
             checkoutService = new CheckoutService();
             checkoutService.OpenCheck();
 
-            milk = new Product(7, "Milk", Category.MILK);
-            bread = new Product(3, "Bread");
+            milk = new Product(7, "Milk", Category.MILK, "Ferma");
+            bread = new Product(3, "Bread", "Formula");
         }
 
 
@@ -130,6 +130,18 @@ namespace SilpoBonusCore.Tests
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(14, check.GetTotalPoints());
+        }
+
+        [Fact]
+        void Should_Apply_FactorByTradeMarkOffer(){
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(bread);
+
+            checkoutService.UseOffer(new FactorByTradeMark("Ferma", 2, new DateTime(2025,10,20)));
+            Check check = checkoutService.CloseCheck();
+
+            Assert.Equal(21, check.GetTotalPoints());
         }
 
 
