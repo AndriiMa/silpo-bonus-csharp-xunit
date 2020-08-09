@@ -28,6 +28,10 @@ namespace SilpoBonusCore
             return this.price;
         }
 
+        internal void SetPrice(int price){
+            this.price = price;
+        }
+
         public string GetName()
         {
             return this.name;

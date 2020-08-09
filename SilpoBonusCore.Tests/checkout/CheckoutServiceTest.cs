@@ -144,7 +144,16 @@ namespace SilpoBonusCore.Tests
             Assert.Equal(21, check.GetTotalPoints());
         }
 
+        [Fact]
+        void Should_Apply_PercentDiscount(){
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(bread);
 
+            checkoutService.AddOffer(new PercentDiscountOffer("Milk", 50, new DateTime(2025,10,20)));
+            Check check = checkoutService.CloseCheck();
+
+            Assert.Equal(6, check.GetTotalCost());
+        }
     }
 
 }
