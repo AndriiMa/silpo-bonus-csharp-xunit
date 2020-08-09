@@ -15,7 +15,7 @@ namespace SilpoBonusCore
             this.pointsForEach = pointsForEach;
         }
 
-        public override void AddPoints(Check check)
+        public override void Apply(Check check)
         {
 
             check.AddPoints(CalculatePoints(check));

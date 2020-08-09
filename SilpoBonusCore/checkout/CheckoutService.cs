@@ -23,24 +23,21 @@ namespace SilpoBonusCore
 
         public Check CloseCheck()
         {
-            ApplyOffers();
+            UseOffers();
 
             Check closedCheck = this.check;
             this.check = null;
             return closedCheck;
         }
 
-        public void UseOffer(Offer offer)
+        public void AddOffer(Offer offer)
         {
-            if (offer.IsExpired())
-            {
                 this.offers.Add(offer);
-            }
         }
 
-        private void ApplyOffers()
+        private void UseOffers()
         {
-            offers.ForEach(o => o.Apply(check));
+            offers.ForEach(o => o.UseOffer(check));
         }
     }
 }

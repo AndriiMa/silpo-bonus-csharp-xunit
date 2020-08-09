@@ -12,16 +12,20 @@ namespace SilpoBonusCore
             this.expirationDate = expirationDate;
         }
 
-        public abstract void AddPoints(Check check);
+        public abstract void Apply(Check check);
 
-        public bool IsExpired()
+        public bool IsValid()
         {
             return DateTime.Now <= expirationDate;
         }
 
-        public void Apply(Check check)
-        {
-            AddPoints(check);
+        public void UseOffer(Check check){
+
+            if(IsValid()){
+                Apply(check);
+            }
+
         }
+
     }
 }

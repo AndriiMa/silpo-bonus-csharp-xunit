@@ -88,7 +88,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new AnyGoodsOffer(6, 2, new DateTime(2025, 10, 20)));
+            checkoutService.AddOffer(new AnyGoodsOffer(6, 2, new DateTime(2025, 10, 20)));
 
             Check check = checkoutService.CloseCheck();
 
@@ -100,7 +100,7 @@ namespace SilpoBonusCore.Tests
         {
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new AnyGoodsOffer(6, 2, new DateTime(2025,10,20)));
+            checkoutService.AddOffer(new AnyGoodsOffer(6, 2, new DateTime(2025,10,20)));
 
             Check check = checkoutService.CloseCheck();
 
@@ -115,7 +115,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2025,10,20)));
+            checkoutService.AddOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2025,10,20)));
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(31, check.GetTotalPoints());
@@ -126,7 +126,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(milk);
 
-            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2019,10,20)));
+            checkoutService.AddOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2019,10,20)));
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(14, check.GetTotalPoints());
@@ -138,7 +138,7 @@ namespace SilpoBonusCore.Tests
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
-            checkoutService.UseOffer(new FactorByTradeMark("Ferma", 2, new DateTime(2025,10,20)));
+            checkoutService.AddOffer(new FactorByTradeMark("Ferma", 2, new DateTime(2025,10,20)));
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(21, check.GetTotalPoints());
