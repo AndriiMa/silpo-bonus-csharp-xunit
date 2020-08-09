@@ -153,6 +153,17 @@ namespace SilpoBonusCore.Tests
             Check check = checkoutService.CloseCheck();
 
             Assert.Equal(6, check.GetTotalCost());
+        } 
+        
+        [Fact]
+        void Should_Apply_GiftDiscount(){
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(bread);
+
+            checkoutService.AddOffer(new GiftDiscountOffer("Bread", new DateTime(2025,10,20)));
+            Check check = checkoutService.CloseCheck();
+
+            Assert.Equal(8, check.GetTotalCost());
         }
     }
 
