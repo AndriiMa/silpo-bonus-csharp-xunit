@@ -43,14 +43,14 @@ namespace SilpoBonusCore.Tests
         }
 
         [Fact]
-        public void Should_()
+        public void Should_Calculate_Total_Cost()
         {
             checkoutService.AddProduct(milk);
             checkoutService.AddProduct(bread);
 
             Check check = checkoutService.CloseCheck();
 
-            Assert.Equal(check.GetTotalCost(), 10);
+            Assert.Equal(10, check.GetTotalCost());
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace SilpoBonusCore.Tests
 
             Check check = checkoutService.CloseCheck();
 
-            Assert.Equal(check.GetTotalPoints(), 12);
+            Assert.Equal(12, check.GetTotalPoints());
         }
 
         [Fact]
@@ -118,7 +118,18 @@ namespace SilpoBonusCore.Tests
             checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2025,10,20)));
             Check check = checkoutService.CloseCheck();
 
-            Assert.Equal(check.GetTotalPoints(), 31);
+            Assert.Equal(31, check.GetTotalPoints());
+        }
+
+        [Fact]
+        void Should_Not_Apply_Offer_When_expirationTime_Less(){
+            checkoutService.AddProduct(milk);
+            checkoutService.AddProduct(milk);
+
+            checkoutService.UseOffer(new FacrorByCategoryOffer(Category.MILK, 2, new DateTime(2019,10,20)));
+            Check check = checkoutService.CloseCheck();
+
+            Assert.Equal(14, check.GetTotalPoints());
         }
 
 

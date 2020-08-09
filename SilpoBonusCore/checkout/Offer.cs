@@ -14,7 +14,7 @@ namespace SilpoBonusCore
         public abstract void AddPoints(Check check); 
 
         public bool IsExpired(){
-            return DateTime.Now >= expirationDate;
+            return DateTime.Now <= expirationDate;
         }
 
         public void Apply(Check check){
