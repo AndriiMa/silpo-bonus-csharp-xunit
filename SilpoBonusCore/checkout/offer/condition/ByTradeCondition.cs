@@ -12,7 +12,7 @@ namespace SilpoBonusCore{
             this.tradeMark = tradeMark;
         }
 
-        public bool isSatisfy(Check check)
+        public bool IsSatisfy(Check check)
         {
             return check.GetProducts().Select(product => product.GetTradeMark())
             .Contains(tradeMark);

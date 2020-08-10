@@ -10,7 +10,7 @@ namespace SilpoBonusCore
             this.requiredAmount = requiredAmount;
         }
 
-        public bool isSatisfy(Check check)
+        public bool IsSatisfy(Check check)
         {
             return check.GetProducts().Count >= requiredAmount;
         }

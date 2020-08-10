@@ -1,7 +1,7 @@
 namespace SilpoBonusCore{
 
     public interface ICondition{
-        bool isSatisfy(Check check);
+        bool IsSatisfy(Check check);
     }
 
 }

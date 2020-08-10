@@ -9,7 +9,7 @@ namespace SilpoBonusCore{
             this.requiredCost = requiredCost;
         }
 
-        public bool isSatisfy(Check check)
+        public bool IsSatisfy(Check check)
         {
            return check.GetTotalCost() >= requiredCost;
         }

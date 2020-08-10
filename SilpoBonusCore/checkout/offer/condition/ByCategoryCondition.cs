@@ -11,7 +11,7 @@ namespace SilpoBonusCore{
             this.category = category;
         }
 
-        public bool isSatisfy(Check check)
+        public bool IsSatisfy(Check check)
         {
             return check.GetProducts().Select(product => product.GetCategory())
             .Contains(category);
